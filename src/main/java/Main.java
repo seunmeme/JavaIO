@@ -6,7 +6,7 @@ public class Main {
             switch(args[0]){
                     case "staging":
                     case "dev":
-                        config = new Config("-" + args[0]);
+                        config = new Config(args[0]);
                         break;
                     default:
                         config = new Config();
