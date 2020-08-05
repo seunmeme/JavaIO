@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class Config {
 //    make path work for every OS.
-    private File file = new File("src/config/config");
+    private File file = new File("src/config/");
     private String path = file.getAbsolutePath();
 
     private HashMap<String, String> config;
@@ -15,11 +15,8 @@ public class Config {
 //    constructor with argument
     public Config(String fileName){
          config = new HashMap<String, String>();
-         if(fileName == "dev" || fileName == "staging"){
-             path += "-";
-         }
 
-        try(BufferedReader dirFile = new BufferedReader(new FileReader(path + fileName + ".txt"))){
+        try(BufferedReader dirFile = new BufferedReader(new FileReader(path + fileName))){
 
             String input;
             String prefix = "";
@@ -59,7 +56,7 @@ public class Config {
 
 //    constructor without argument
     public Config (){
-        this("");
+        this( "/config.txt");
     }
 
 //    method for getting values in config.

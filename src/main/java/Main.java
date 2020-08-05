@@ -6,7 +6,7 @@ public class Main {
             switch(args[0]){
                     case "staging":
                     case "dev":
-                        config = new Config(args[0]);
+                        config = new Config("/config-" + args[0] + ".txt");
                         break;
                     default:
                         config = new Config();
@@ -16,5 +16,6 @@ public class Main {
             config = new Config();
         }
 
+        System.out.println(config.get("pipeline"));
     }
 }

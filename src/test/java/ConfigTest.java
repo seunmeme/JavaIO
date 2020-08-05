@@ -30,7 +30,7 @@ class ConfigTest {
     @Test
     @DisplayName("Testing get() method for development")
     void getDev() {
-        config = new Config("dev");
+        config = new Config("/config-dev.txt");
 
         assertAll(
                 () -> assertEquals("sq04_db-development", config.get("dbname")),
@@ -47,7 +47,7 @@ class ConfigTest {
     @Test
     @DisplayName("Testing get() method for staging")
     void getStaging() {
-        config = new Config("staging");
+        config = new Config("/config-staging.txt");
 
         assertAll(
                 () -> assertEquals("sq04_db", config.get("dbname")),
